@@ -1,0 +1,30 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 70px;
+  text-align: center;
+  color: white;
+  background: #f4b27f; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #f4b27f 0%, #ffa0d7 87%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #f4b27f 0%, #ffa0d7 87%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #f4b27f 0%, #ffa0d7 87%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+html {
+  height: 100%;
+}
+
+#title,
+#gamecontainer {
+  position: relative;
+  top: 100px;
+  width: 100%;
+}
+
+#title {
+  font-size: 90px;
+  text-decoration: underline;
+}
+
+#gamecontainer {
+  top: 300px;
+}
