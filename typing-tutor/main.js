@@ -17,7 +17,7 @@ function render(char) {
 function renderAll(characters) {
   var $all
   for (let i = 0; i < characters.length; i++) {
-    $all = document.body.appendChild(render(characters[i]))
+    $all = document.querySelector('#gamecontainer').appendChild(render(characters[i]))
   }
   return $all
 }
