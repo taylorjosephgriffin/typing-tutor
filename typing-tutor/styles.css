@@ -1,6 +1,6 @@
 body {
   font-family: 'Raleway', sans-serif;
-  font-size: 50px;
+  font-size: 70px;
   text-align: center;
   color: white;
   background: #f4b27f; /* Old browsers */
@@ -27,5 +27,4 @@ html {
 
 #gamecontainer {
   top: 300px;
-  background-color: rgba(0, 0, 0, 0.1);
 }
