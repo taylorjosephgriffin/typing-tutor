@@ -13,3 +13,11 @@ function render(char) {
   $char.textContent = char.char
   return $char
 }
+
+function renderAll(characters) {
+  var $all
+  for (let i = 0; i < characters.length; i++) {
+    $all = document.body.appendChild(render(characters[i]))
+  }
+  return $all
+}
