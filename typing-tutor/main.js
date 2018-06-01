@@ -21,6 +21,9 @@ function render(char) {
   if (char.index === appState.currentCharacter) {
     $char.classList.add('current-character')
   }
+  if (characters[appState.currentCharacter].failures > 0 && char.index === appState.currentCharacter) {
+    $char.classList.add('failed')
+  }
   return $char
 }
 var pressedKey
