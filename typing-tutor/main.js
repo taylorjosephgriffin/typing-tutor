@@ -25,11 +25,9 @@ function render(char) {
   }
   if (characters[appState.currentCharacter].failures > 0 && char.index === appState.currentCharacter) {
     $char.className = 'failed'
-    appState.currentCharacter++
   }
   else if (characters[appState.currentCharacter].failures === 0 && char.index === appState.currentCharacter) {
     $char.className = 'success'
-    appState.currentCharacter++
   }
   return $char
 }
@@ -49,6 +47,7 @@ window.addEventListener('keydown', function () {
   }
   else {
     characters[appState.currentCharacter].failures = 0
+    appState.currentCharacter++
   }
   document.querySelector('#gamecontainer').innerHTML = ''
   renderAll(characters)
