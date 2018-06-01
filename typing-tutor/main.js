@@ -11,7 +11,7 @@ var characters = sentence.split('').map(function (char, index, failures) {
 })
 
 var appState = {
-  character: characters,
+  characters: characters,
   currentCharacter: 0
 }
 
@@ -23,6 +23,7 @@ function render(char) {
   }
   return $char
 }
+var pressedKey
 
 function renderAll(chars) {
   var $all
@@ -33,6 +34,10 @@ function renderAll(chars) {
 }
 
 window.addEventListener('keydown', function () {
+  pressedKey = event.key
+  if (pressedKey !== appState.characters[appState.currentCharacter].char) {
+    characters[appState.currentCharacter].failures = 1
+  }
   document.querySelector('#gamecontainer').innerHTML = ''
   renderAll(characters)
 })
