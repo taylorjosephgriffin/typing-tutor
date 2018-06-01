@@ -2,7 +2,7 @@
 
 var sentence = 'grumpy wizards make toxic brew for the evil queen and jack.'
 
-var characters = sentence.split('').map(function (char, index, failures) {
+var characters = sentence.split('').map(function (char, index) {
   return {
     char,
     index,
