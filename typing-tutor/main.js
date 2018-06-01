@@ -47,7 +47,7 @@ window.addEventListener('keydown', function () {
   if (pressedKey !== appState.characters[appState.currentCharacter].char) {
     characters[appState.currentCharacter].failures = 1
   }
-  else if (pressedKey === appState.characters[appState.currentCharacter].char) {
+  else {
     characters[appState.currentCharacter].failures = 0
   }
   document.querySelector('#gamecontainer').innerHTML = ''
