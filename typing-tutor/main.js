@@ -32,4 +32,9 @@ function renderAll(chars) {
   return $all
 }
 
+window.addEventListener('keydown', function () {
+  document.querySelector('#gamecontainer').innerHTML = ''
+  renderAll(characters)
+})
+
 renderAll(characters)
