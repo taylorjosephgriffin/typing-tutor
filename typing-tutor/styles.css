@@ -28,3 +28,7 @@ html {
 #gamecontainer {
   top: 300px;
 }
+
+.current-character {
+  color: blue;
+}
