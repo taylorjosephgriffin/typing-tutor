@@ -10,7 +10,8 @@ var characters = sentence.split('').map(function (char, index) {
 })
 
 var appState = {
-  character: characters
+  character: characters,
+  currentCharacter: 0
 }
 
 function render(char) {
