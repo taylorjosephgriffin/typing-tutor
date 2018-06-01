@@ -32,3 +32,11 @@ html {
 .current-character {
   color: black;
 }
+
+.failed {
+  color: red;
+}
+
+.success {
+  color: green;
+}
