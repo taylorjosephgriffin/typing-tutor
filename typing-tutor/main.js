@@ -17,6 +17,9 @@ var appState = {
 function render(char) {
   var $char = document.createElement('span')
   $char.textContent = char.char
+  if (char.index === appState.currentCharacter) {
+    $char.classList.add('current-character')
+  }
   return $char
 }
 
