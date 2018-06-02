@@ -15,8 +15,6 @@ var appState = {
   currentCharacter: 0
 }
 
-var pressedKey
-
 function render(char) {
   var $char = document.createElement('span')
   $char.textContent = char.char
@@ -41,7 +39,7 @@ function renderAll(chars) {
 }
 
 window.addEventListener('keydown', function () {
-  pressedKey = event.key
+  let pressedKey = event.key
   if (pressedKey !== appState.characters[appState.currentCharacter].char) {
     characters[appState.currentCharacter].failures += 1
   }
