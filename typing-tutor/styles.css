@@ -30,6 +30,7 @@ html {
 }
 
 .current-character {
+  text-decoration: underline;
   color: black;
 }
 

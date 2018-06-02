@@ -6,7 +6,7 @@ var characters = sentence.split('').map(function (char, index) {
   return {
     char,
     index,
-    failures: null
+    failures: 0
   }
 })
 
@@ -26,7 +26,7 @@ function render(char) {
   if (characters[appState.currentCharacter].failures > 0 && char.index === appState.currentCharacter) {
     $char.className = 'failed'
   }
-  else if (characters[appState.currentCharacter].failures === 0 && char.index === appState.currentCharacter) {
+  else if (char.index === appState.currentCharacter - 1) {
     $char.className = 'success'
   }
   return $char
@@ -43,10 +43,9 @@ function renderAll(chars) {
 window.addEventListener('keydown', function () {
   pressedKey = event.key
   if (pressedKey !== appState.characters[appState.currentCharacter].char) {
-    characters[appState.currentCharacter].failures = 1
+    characters[appState.currentCharacter].failures += 1
   }
   else {
-    characters[appState.currentCharacter].failures = 0
     appState.currentCharacter++
   }
   document.querySelector('#gamecontainer').innerHTML = ''
