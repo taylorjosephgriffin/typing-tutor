@@ -5,12 +5,13 @@ var sentence = 'grumpy wizards make toxic brew for the evil queen and jack.'
 var characters = sentence.split('').map(function (char, index) {
   return {
     char,
-    index
+    index,
+    failures: 0
   }
 })
 
 var appState = {
-  character: characters,
+  characters: characters,
   currentCharacter: 0
 }
 
@@ -19,6 +20,12 @@ function render(char) {
   $char.textContent = char.char
   if (char.index === appState.currentCharacter) {
     $char.classList.add('current-character')
+  }
+  if (characters[appState.currentCharacter].failures > 0 && char.index === appState.currentCharacter) {
+    $char.className = 'failed'
+  }
+  else if (char.index === appState.currentCharacter - 1) {
+    $char.className = 'success'
   }
   return $char
 }
@@ -30,5 +37,17 @@ function renderAll(chars) {
   }
   return $all
 }
+
+window.addEventListener('keydown', function () {
+  let pressedKey = event.key
+  if (pressedKey !== appState.characters[appState.currentCharacter].char) {
+    characters[appState.currentCharacter].failures += 1
+  }
+  else {
+    appState.currentCharacter++
+  }
+  document.querySelector('#gamecontainer').innerHTML = ''
+  renderAll(characters)
+})
 
 renderAll(characters)
