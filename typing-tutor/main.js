@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-var sentence = 'grumpy wizards make toxic brew for the evil queen and jack.'
+var sentence = 'grumpy wizards make toxic brew for the evil queen and jack. '
 
 var characters = sentence.split('').map(function (char, index) {
   return {
@@ -36,6 +36,16 @@ function renderAll(chars) {
     $all = document.querySelector('#gamecontainer').appendChild(render(characters[i]))
   }
   return $all
+}
+
+function score(characters) {
+  let failures = 0
+  let score = 0
+  for (let i = 0; i < characters.length; i++) {
+    failures += characters[i].failures
+    score = ((sentence.length - failures) / sentence.length) * 100
+  }
+  return score.toFixed(2)
 }
 
 window.addEventListener('keydown', function () {

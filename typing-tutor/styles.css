@@ -16,17 +16,17 @@ html {
 #title,
 #gamecontainer {
   position: relative;
-  top: 100px;
   width: 100%;
 }
 
 #title {
+  top: 60px;
   font-size: 90px;
   text-decoration: underline;
 }
 
 #gamecontainer {
-  top: 300px;
+  top: 130px;
 }
 
 .current-character {
