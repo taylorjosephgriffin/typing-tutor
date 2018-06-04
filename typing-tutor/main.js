@@ -48,6 +48,13 @@ function score(characters) {
   return score.toFixed(2)
 }
 
+function gameOver(characters) {
+  let $win = document.createElement('div')
+  $win.textContent = `You completed this exercise with %${score(characters)} accuracy.`
+  document.body.appendChild($win)
+  return $win
+}
+
 window.addEventListener('keydown', function () {
   let pressedKey = event.key
   if (pressedKey !== appState.characters[appState.currentCharacter].char) {
