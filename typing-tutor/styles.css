@@ -35,6 +35,23 @@ html {
   top: 160px;
 }
 
+#replay {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+
+}
+
+#replay:focus {
+  outline: none;
+}
+
 .current-character {
   text-decoration: underline;
   color: black;
