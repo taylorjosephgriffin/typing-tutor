@@ -50,7 +50,8 @@ function score(characters) {
 
 function gameOver(characters) {
   let $win = document.createElement('div')
-  $win.textContent = `You completed this exercise with %${score(characters)} accuracy.`
+  $win.textContent = `You completed this exercise with an ${score(characters)}% accuracy.`
+  $win.setAttribute('id', 'win')
   document.body.appendChild($win)
   return $win
 }
@@ -65,6 +66,9 @@ window.addEventListener('keydown', function () {
   }
   document.querySelector('#gamecontainer').innerHTML = ''
   renderAll(characters)
+  if (pressedKey === characters[characters.length - 2].char && appState.characters[appState.currentCharacter].char === characters[characters.length - 1].char) {
+    gameOver(characters)
+  }
 })
 
 renderAll(characters)
