@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-var sentence = 'grumpy wizards make toxic brew for the evil queen and jack.'
+var sentence = 'grumpy wizards make toxic brew for the evil queen and jack. '
 
 var characters = sentence.split('').map(function (char, index) {
   return {
@@ -38,6 +38,24 @@ function renderAll(chars) {
   return $all
 }
 
+function score(characters) {
+  let failures = 0
+  let score = 0
+  for (let i = 0; i < characters.length; i++) {
+    failures += characters[i].failures
+    score = ((sentence.length - failures) / sentence.length) * 100
+  }
+  return score.toFixed(2)
+}
+
+function gameOver(characters) {
+  let $win = document.createElement('div')
+  $win.textContent = `You completed this exercise with an ${score(characters)}% accuracy.`
+  $win.setAttribute('id', 'win')
+  document.body.appendChild($win)
+  return $win
+}
+
 window.addEventListener('keydown', function () {
   let pressedKey = event.key
   if (pressedKey !== appState.characters[appState.currentCharacter].char) {
@@ -48,6 +66,9 @@ window.addEventListener('keydown', function () {
   }
   document.querySelector('#gamecontainer').innerHTML = ''
   renderAll(characters)
+  if (pressedKey === characters[characters.length - 2].char && appState.characters[appState.currentCharacter].char === characters[characters.length - 1].char) {
+    gameOver(characters)
+  }
 })
 
 renderAll(characters)
